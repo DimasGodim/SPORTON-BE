@@ -7,7 +7,7 @@ const router = Router();
 
 const middlewareUpload = uploud("data/category")
 
-router.post("/", middlewareUpload.single("image"), authenticate, createCategory);
+router.post("/checkout", middlewareUpload.single("image"), authenticate, createCategory);
 router.get("/", getCategories);
 router.get("/:id", getCategoryById);
 router.put("/:id", middlewareUpload.single("image"), authenticate, updateCategory);
